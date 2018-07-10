@@ -25,8 +25,19 @@
           <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
         </div>
         <div class="doc">
-          <div class="title alt">Test</div>
-          <button class="alt" @click="getTestRecipeText">Click to log recipe</button>
+          <div class="title alt">Test Recipe</div>
+          <table>
+            <tr>
+              <th>Ingredient</th>              
+              <th>Amount</th>              
+              <th>Measurement</th>              
+            </tr>
+            <tr v-for="measuredIngredient in testRecipe.measuredIngredients" :key="measuredIngredient.ingredient.name">
+              <td>{{measuredIngredient.ingredient.name}}</td>
+              <td>{{measuredIngredient.amount}}</td>
+              <td>{{measuredIngredient.measurement.toString()}}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </main>
@@ -36,16 +47,19 @@
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
   import {BroccoliChickenShellsAndCheese} from '../../testRecipe'
+  console.log(BroccoliChickenShellsAndCheese())
+
   export default {
     name: 'landing-page',
     components: { SystemInformation },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
-      },
-      getTestRecipeText () {
-        let shellsNChesse = BroccoliChickenShellsAndCheese()
-        console.log(shellsNChesse.toString())
+      }
+    },
+    data () {
+      return {
+        testRecipe: BroccoliChickenShellsAndCheese()
       }
     }
   }
