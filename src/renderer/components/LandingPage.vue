@@ -46,8 +46,8 @@
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
-  import {BroccoliChickenShellsAndCheese} from '../../testRecipe'
-  console.log(BroccoliChickenShellsAndCheese())
+  import MasterRecipeList from '../../masterRecipeList'
+  console.log(MasterRecipeList)
 
   export default {
     name: 'landing-page',
@@ -59,7 +59,7 @@
     },
     data () {
       return {
-        testRecipe: BroccoliChickenShellsAndCheese()
+        testRecipe: MasterRecipeList[0]
       }
     }
   }

@@ -12,6 +12,7 @@ class Measurement {
    * toMetric will return the passed in amount of the measurement in grams or liters
    * (depending on if it's liquid). The purpose of this is to be used in
    * other methods, such as adding and subtracting
+   * NOTE(quinton): this function will return the same amount for things that can't be converted to metric (might reconsider this later)
    */
   toMetric (amount) {
     throw new Error('toMetric method must be implemented for all child classes of Measurement')
@@ -21,6 +22,7 @@ class Measurement {
    * fromMetric will take an amount of metric units (grams or liters) and
    * return the appropriate amount of the measurement class. Will come in handy
    * after adding/subtracting different measurement types.
+   * NOTE(quinton): this function will return the same amount for things that can't be converted to metric (might reconsider this later)
    */
   fromMetric (amount) {
     throw new Error('fromMetric method must be implemented for all child classes of Measurement')
@@ -107,6 +109,30 @@ class Dash extends Measurement {
   }
 }
 
+class Piece extends Measurement {
+  toMetric (amount) {
+    return amount
+  }
+  fromMetric (amount) {
+    return amount
+  }
+  toString () {
+    return 'Pieces (whole)'
+  }
+}
+
+class Pint extends Measurement {
+  toMetric (amount) {
+    return amount * 0.473176
+  }
+  fromMetric (amount) {
+    return 0.473176 / amount
+  }
+  toString () {
+    'pint'
+  }
+}
+
 // use singleton pattern to create a single instance of each of the measurement classes to export
 const poundInstance = new Pound()
 Object.freeze(poundInstance)
@@ -120,7 +146,11 @@ const teaspoonInstance = new Teaspoon()
 Object.freeze(teaspoonInstance)
 const dashInstance = new Dash()
 Object.freeze(dashInstance)
-
+const pieceInstance = new Piece()
+Object.freeze(pieceInstance)
+const pintInstance = new Pint()
+Object.freeze(pintInstance
+)
 // export each singleton with a better name
 export {
   poundInstance as Pound,
@@ -128,5 +158,7 @@ export {
   tablespoonInstance as Tablespoon,
   cupInstance as Cup,
   teaspoonInstance as Teaspoon,
-  dashInstance as Dash
+  dashInstance as Dash,
+  pieceInstance as Piece,
+  pintInstance as Pint
 }
