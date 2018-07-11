@@ -4,7 +4,7 @@
  * to build recipes and lists.
  */
 
-import { Ingredient } from './ingredient'
+import { Ingredient } from '../classes/ingredient'
 
 let LargeShellPasta = Object.freeze(new Ingredient('Large Shell Pasta', 3))
 let BonelessSkinlessChickenBreast = Object.freeze(new Ingredient('Boneless Skinless Chicken Breasts', 5))
@@ -21,7 +21,7 @@ let ParmeseanCheeseShredded = Object.freeze(new Ingredient('Shredded Parmesean C
 let SalmonFillet = Object.freeze(new Ingredient('Salmon Fillet', 5))
 let Shallots = Object.freeze(new Ingredient('Medium Shallot'), 4)
 let DryWhiteWine = Object.freeze(new Ingredient('Dry White Wine', 3))
-let Lemons = Object.freeze(new Ingredient('Lemons'), 4)
+let Lemon = Object.freeze(new Ingredient('Lemons'), 4)
 let HeavyCream = Object.freeze(new Ingredient('Heavy Cream'), 3)
 let OliveOil = Object.freeze(new Ingredient('Olive Oil'), 1)
 let Parsley = Object.freeze(new Ingredient('Parsley'), 4)
@@ -57,7 +57,7 @@ export {
   SalmonFillet,
   Shallots,
   DryWhiteWine,
-  Lemons,
+  Lemon,
   HeavyCream,
   OliveOil,
   Parsley,

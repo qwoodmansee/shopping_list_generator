@@ -1,6 +1,6 @@
-import {MeasuredIngredient} from './ingredient'
-import {Recipe} from './recipe'
-import * as Measurements from './measurements'
+import {MeasuredIngredient} from '../classes/ingredient'
+import {Recipe} from '../classes/recipe'
+import * as Measurements from '../classes/measurements'
 import * as Pantry from './pantry'
 
 export default [
@@ -26,7 +26,7 @@ export default [
   new Recipe(
     'Oven Baked Salmon with Lemon Cream Sauce',
     [
-      new MeasuredIngredient(Pantry.Salmon, Measurements.Piece, 2),
+      new MeasuredIngredient(Pantry.SalmonFillet, Measurements.Piece, 2),
       new MeasuredIngredient(Pantry.Salt, Measurements.Dash, 1),
       new MeasuredIngredient(Pantry.Pepper, Measurements.Dash, 1),
       new MeasuredIngredient(Pantry.OliveOil, Measurements.Tablespoon, 1),
@@ -49,7 +49,7 @@ export default [
       new MeasuredIngredient(Pantry.Basil, Measurements.Tablespoon, 1),
       new MeasuredIngredient(Pantry.OliveOil, Measurements.Tablespoon, 2),
       new MeasuredIngredient(Pantry.Lemon, Measurements.Piece, 0.5),
-      new MeasuredIngredient(Pantry.Salmon, Measurements.Piece, 2),
+      new MeasuredIngredient(Pantry.SalmonFillet, Measurements.Piece, 2),
       new MeasuredIngredient(Pantry.Zucchini, Measurements.Piece, 1),
       new MeasuredIngredient(Pantry.Mushrooms, Measurements.Cup, 1),
       new MeasuredIngredient(Pantry.YellowBellPepper, Measurements.Piece, 1),
