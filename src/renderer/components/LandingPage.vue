@@ -46,7 +46,7 @@
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
-  import MasterRecipeList from '../../masterRecipeList'
+  import MasterRecipeList from '../datasource/masterRecipeList'
   console.log(MasterRecipeList)
 
   export default {
