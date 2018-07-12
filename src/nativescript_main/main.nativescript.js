@@ -4,7 +4,7 @@ import router from '../renderer/router/index.nativescript'
 
 import store from '../renderer/store/index.nativescript'
 
-import './nativescript-styles.scss'
+import './styles.nativescript.scss'
 
 // Uncommment the following to see NativeScript-Vue output logs
 Vue.config.silent = false

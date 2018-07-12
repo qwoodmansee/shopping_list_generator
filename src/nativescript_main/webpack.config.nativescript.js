@@ -10,8 +10,8 @@ const WebpackSynchronizableShellPlugin = require('webpack-synchronizable-shell-p
 const NativeScriptVueExternals = require('nativescript-vue-externals')
 const NativeScriptVueTarget = require('nativescript-vue-target')
 
-// Prepare NativeScript application from template (if necessary)
-require('./nativescript-prepare')()
+// Prepare NativeScript application from t./prepare.nativescript
+require('./prepare.nativescript')()
 
 // Generate platform-specific webpack configuration
 const config = (platform, launchArgs) => {
@@ -43,7 +43,7 @@ const config = (platform, launchArgs) => {
 
     target: NativeScriptVueTarget,
 
-    entry: path.resolve(__dirname, './nativescript-main.js'),
+    entry: path.resolve(__dirname, './main.nativescript.js'),
 
     output: {
       path: path.resolve(__dirname, '../../dist/app'),
@@ -132,7 +132,7 @@ const config = (platform, launchArgs) => {
       new WebpackSynchronizableShellPlugin({
         onBuildEnd: {
           scripts: [
-            ...launchArgs ? [`node ./src/nativescript-main/nativescript-launch.js ${launchArgs}`] : []
+            ...launchArgs ? [`node ./src/nativescript_main/launch.nativescript.js ${launchArgs}`] : []
           ],
           blocking: false
         }
