@@ -6,7 +6,6 @@
         <span class="title">
           Welcome to your new project!
         </span>
-        <system-information></system-information>
       </div>
 
       <div class="right-side">
@@ -45,27 +44,29 @@
 </template>
 
 <script>
-  import SystemInformation from './LandingPage/SystemInformation.electron'
-  import MasterRecipeList from '../datasource/masterRecipeList'
-  console.log(MasterRecipeList)
+  import SharedLogic from './LandingPage.js'
 
   export default {
-    name: 'landing-page',
-    components: { SystemInformation },
+    name: SharedLogic.name,
+    components: SharedLogic.components,
+    // example of how to combine shared logic methods with platform specific methods
     methods: {
+      ...SharedLogic.methods,
       open (link) {
         this.$electron.shell.openExternal(link)
       }
     },
+    // example of how data (which is a function) has to work
     data () {
       return {
-        testRecipe: MasterRecipeList[0]
+        ...SharedLogic.data(),
+        examplePlatformSpecifcData: 'hello electron world'
       }
     }
   }
 </script>
 
-<style>
+<style scoped>
   @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
   * {

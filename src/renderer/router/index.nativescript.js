@@ -1,6 +1,6 @@
 import Vue from 'nativescript-vue'
 import VueRouter from 'vue-router'
-import LandingPage from '../components/LandingPage.nativescript'
+import LandingPage from '../components/LandingPage/LandingPage.nativescript'
 
 Vue.use(VueRouter)
 
