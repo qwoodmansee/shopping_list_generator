@@ -13,7 +13,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 let webConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    web: path.join(__dirname, '../src/electron-main/main.js')
+    web: path.join(__dirname, '../src/electron-main/electron-main.js')
   },
   module: {
     rules: [
@@ -84,7 +84,7 @@ let webConfig = {
     new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/electron-main/index.ejs'),
+      template: path.resolve(__dirname, '../src/electron-main/electron-index.ejs'),
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,

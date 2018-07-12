@@ -79,7 +79,7 @@ function startRenderer () {
 
 function startMain () {
   return new Promise((resolve, reject) => {
-    mainConfig.entry.main = [path.join(__dirname, '../src/electron-main/index.dev.js')].concat(mainConfig.entry.main)
+    mainConfig.entry.main = [path.join(__dirname, '../src/electron-main/electron-index.dev.js')].concat(mainConfig.entry.main)
 
     const compiler = webpack(mainConfig)
 

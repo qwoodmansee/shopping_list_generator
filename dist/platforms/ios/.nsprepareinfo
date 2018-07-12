@@ -1,0 +1,12 @@
+{
+	"time": "Wed Jul 11 2018 16:19:31 GMT-0400 (EDT)",
+	"nativePlatformStatus": "3",
+	"bundle": false,
+	"release": false,
+	"changesRequireBuild": true,
+	"projectFileHash": "9a84dc04e6328ba5f18dad9c159f59d5369296d9649a1c68953b1860029222e5",
+	"changesRequireBuildTime": "Wed Jul 11 2018 16:19:31 GMT-0400 (EDT)",
+	"appFilesHashes": {
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/package.json": "a10bcec4b7e459eb4bb500094f10d8c98bb854c8"
+	}
+}

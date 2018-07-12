@@ -10,7 +10,7 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 
 let mainConfig = {
   entry: {
-    main: path.join(__dirname, '../src/electron-main/index.js')
+    main: path.join(__dirname, '../src/electron-main/electron-index.js')
   },
   externals: [
     ...Object.keys(dependencies || {})
