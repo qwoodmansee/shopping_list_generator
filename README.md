@@ -30,6 +30,18 @@ npm run lint
 
 ```
 
+### General Project Structure
+While this tool uses webpack to bundle everything together, it's important to note that there are 2 basic build configurations within this repository (one for Electron and one for Nativescript). 
+Electron specific files relating to building and configuration can be found in these folders:
+- .electron-vue
+- src/electron-main
+
+Nativescript specific files related to building and configuration can be found in
+- src/nativescript_main 
+
+All actual application data (e.g. components, business logic, classes, etc.) can be found in the src/renderer folder 
+  * note that files with .electron or .nativescript in their name will be specific to that build.
+
 ---
 
 This project was made by combining two templates - one for electron vue apps and one for nativescript. For more information regarding these two templates, see the following:
