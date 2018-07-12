@@ -44,7 +44,7 @@ const config = (platform, launchArgs) => {
     entry: path.resolve(__dirname, './nativescript-main.js'),
 
     output: {
-      path: path.resolve(__dirname, './dist/app'),
+      path: path.resolve(__dirname, '../../dist/app'),
       filename: `app.${platform}.js`
     },
 

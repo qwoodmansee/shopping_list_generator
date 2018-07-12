@@ -1,12 +1,16 @@
 {
-	"time": "Wed Jul 11 2018 16:19:31 GMT-0400 (EDT)",
+	"time": "Thu Jul 12 2018 09:52:46 GMT-0400 (EDT)",
 	"nativePlatformStatus": "3",
 	"bundle": false,
 	"release": false,
-	"changesRequireBuild": true,
+	"changesRequireBuild": false,
 	"projectFileHash": "9a84dc04e6328ba5f18dad9c159f59d5369296d9649a1c68953b1860029222e5",
 	"changesRequireBuildTime": "Wed Jul 11 2018 16:19:31 GMT-0400 (EDT)",
 	"appFilesHashes": {
-		"/Users/quinton/projects/recipes_testing/recipes/dist/app/package.json": "a10bcec4b7e459eb4bb500094f10d8c98bb854c8"
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/.gitkeep": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/app.ios.css": "21939a23650ba565ee4f5bd249281ab0636f559c",
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/package.json": "a10bcec4b7e459eb4bb500094f10d8c98bb854c8",
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/logo.png": "b3257fc8d3fa6defb2a0ec35e5b7f47e7d71bfe5",
+		"/Users/quinton/projects/recipes_testing/recipes/dist/app/app.ios.js": "6e426a7bb828ed0b0dd69c271753af94c5157b48"
 	}
 }
