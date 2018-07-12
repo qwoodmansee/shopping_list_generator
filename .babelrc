@@ -1,30 +1,6 @@
 {
-  "comments": false,
-  "env": {
-    "main": {
-      "presets": [
-        ["env", {
-          "targets": { "node": 7 }
-        }],
-        "stage-0"
-      ]
-    },
-    "renderer": {
-      "presets": [
-        ["env", {
-          "modules": false
-        }],
-        "stage-0"
-      ]
-    },
-    "web": {
-      "presets": [
-        ["env", {
-          "modules": false
-        }],
-        "stage-0"
-      ]
-    }
-  },
-  "plugins": ["transform-runtime"]
+  "presets": [
+    ["env", { "cacheDirectory": true }]
+  ],
+  "plugins": ["transform-object-rest-spread"]
 }

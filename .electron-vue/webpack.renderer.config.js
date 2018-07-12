@@ -23,7 +23,7 @@ let whiteListedModules = ['vue']
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/main.js')
+    renderer: path.join(__dirname, '../src/electron-main/electron-main.js')
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -55,14 +55,14 @@ let rendererConfig = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/, /nativescript_main/]
       },
       {
         test: /\.node$/,
         use: 'node-loader'
       },
       {
-        test: /\.vue$/,
+        test: /\.electron\.vue$/,
         use: {
           loader: 'vue-loader',
           options: {
@@ -112,7 +112,7 @@ let rendererConfig = {
     new ExtractTextPlugin('styles.css'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/index.ejs'),
+      template: path.resolve(__dirname, '../src/electron-main/electron-index.ejs'),
       minify: {
         collapseWhitespace: true,
         removeAttributeQuotes: true,
