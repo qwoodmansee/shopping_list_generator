@@ -1,4 +1,5 @@
 <template>
+  <!-- THIS FILE IS VERY MUCH STILL IN PROGRESS / BROKEN. WHILE THIS COMMENT EXISTS, DO NOT USE THIS FILE AS A TEMPLATE FOR ANYTHING!-->
   <Page class="page">
     <ActionBar class="action-bar" title="Testing">
       <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" @tap="console.log('hello')">hello</NavigationButton>
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+  // THIS FILE IS VERY MUCH STILL IN PROGRESS / BROKEN. WHILE THIS COMMENT EXISTS, DO NOT USE THIS FILE AS A TEMPLATE FOR ANYTHING!
   export default {
     data () {
       return {
@@ -45,6 +47,8 @@
 </script>
 
 <style scoped>
+/*  THIS FILE IS VERY MUCH STILL IN PROGRESS / BROKEN. WHILE THIS COMMENT EXISTS, DO NOT USE THIS FILE AS A TEMPLATE FOR ANYTHING! */
+
   .hello-world {
     margin: 20;
   }
