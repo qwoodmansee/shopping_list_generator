@@ -55,7 +55,7 @@ let rendererConfig = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/, /nativescript-main/]
       },
       {
         test: /\.node$/,

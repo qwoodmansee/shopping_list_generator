@@ -1,3 +1,5 @@
+process.env.BABEL_ENV = 'main'
+
 const path = require('path')
 const webpack = require('webpack')
 const winston = require('winston-color')
@@ -78,6 +80,9 @@ const config = (platform, launchArgs) => {
     },
 
     resolve: {
+      alias: {
+        '@': path.join(__dirname, '../src/renderer')
+      },
       modules: [
         'node_modules/tns-core-modules',
         'node_modules'
@@ -90,8 +95,8 @@ const config = (platform, launchArgs) => {
         `.${platform}.js`,
         '.js',
         `.${platform}.vue`,
-        '.nativescript.vue'
-        // '.vue'
+        '.nativescript.vue',
+        '.vue'
       ]
     },
 

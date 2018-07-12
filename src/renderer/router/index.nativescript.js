@@ -1,13 +1,23 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'nativescript-vue'
+import VueRouter from 'vue-router'
+import LandingPage from '../components/LandingPage.nativescript'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const router = new VueRouter({
+  pageRouting: true,
   routes: [
     {
-      path: '*',
-      redirect: '/'
-    }
+      path: '/',
+      component: LandingPage,
+      meta: {
+        title: 'Landing Page'
+      }
+    },
+    {path: '*', redirect: '/'}
   ]
 })
+
+router.replace('/')
+
+module.exports = router

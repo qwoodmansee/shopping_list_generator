@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import App from '../renderer/App.electron'
 import router from '../renderer/router/index.electron'
-import store from '../renderer/store'
+import store from '../renderer/store/index.electron'
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios

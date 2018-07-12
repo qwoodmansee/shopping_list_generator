@@ -2,7 +2,7 @@ import Vue from 'nativescript-vue'
 
 import router from '../renderer/router/index.nativescript'
 
-import store from '../renderer/store'
+import store from '../renderer/store/index.nativescript'
 
 import './nativescript-styles.scss'
 
