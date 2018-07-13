@@ -11,7 +11,7 @@ export default {
   },
   data () {
     return {
-      testRecipe: MasterRecipeList[0]
+      recipes: MasterRecipeList
     }
   }
 }
