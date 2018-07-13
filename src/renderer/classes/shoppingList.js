@@ -18,7 +18,7 @@ export class ShoppingList {
   addMeasuredIngredient (measuredIngredient) {
     // check if the ingredient is already in the list
     let existingIngredientIndex = this.measuredIngredients.findIndex(x => x.ingredient.name === measuredIngredient.ingredient.name)
-    if (existingIngredientIndex === undefined) {
+    if (existingIngredientIndex === undefined || existingIngredientIndex === -1) {
       this.measuredIngredients.push(measuredIngredient)
     } else {
       this.measuredIngredients[existingIngredientIndex].add(measuredIngredient)
@@ -36,5 +36,6 @@ export class ShoppingList {
     recipe.measuredIngredients.map(el => {
       this.addMeasuredIngredient(el)
     })
+    console.log(this.measuredIngredients)
   }
 }

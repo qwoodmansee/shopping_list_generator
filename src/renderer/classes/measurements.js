@@ -129,7 +129,7 @@ class Pint extends Measurement {
     return 0.473176 / amount
   }
   toString () {
-    'pint'
+    return 'pint'
   }
 }
 

@@ -14,8 +14,7 @@ export default {
   components: {},
   methods: {
     recipeSelected () {
-      console.log('Recipe Clicked!')
-      console.log(this.recipe)
+      this.$emit('onCardClick')
     }
   },
   data () {

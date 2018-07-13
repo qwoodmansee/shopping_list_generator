@@ -4,7 +4,7 @@
       <header>Shopping List Maker</header>
       <main>
         <div v-for="recipe in recipes" :key="recipe.name">
-          <recipe-card :recipe="recipe"/>
+          <recipe-card :recipe="recipe" @onCardClick="addRecipe(recipe)"/>
         </div>
       </main>
       <aside>
@@ -14,12 +14,13 @@
               <th>Amount</th>              
               <th>Measurement</th>              
             </tr>
-            <tr v-for="measuredIngredient in recipes[0].measuredIngredients" :key="measuredIngredient.ingredient.name">
+            <tr v-for="measuredIngredient in shoppingList.measuredIngredients" :key="measuredIngredient.ingredient.name">
               <td class="ingredient-name">{{measuredIngredient.ingredient.name}}</td>
               <td class="ingredient-amount">{{measuredIngredient.amount}}</td>
               <td class="ingredient-measurement">{{measuredIngredient.measurement.toString()}}</td>
             </tr>
           </table>
+          <button @click="clearShoppingList">Reset</button>
       </aside>
       <footer>copyright qwoodmansee</footer>
     </section>
@@ -42,6 +43,7 @@
         this.$electron.shell.openExternal(link)
       }
     },
+    computed: SharedLogic.computed,
     // example of how data (which is a function) has to work
     data () {
       return {
@@ -84,6 +86,7 @@
   .app-grid > aside {
     /* background: #30997a; */
     grid-area: sidebar;
+    font-size: small;
   }
   .app-grid > footer {
     /* background: #6a478f; */
