@@ -1,54 +1,40 @@
 <template>
   <div id="wrapper">
-    <img id="logo" src="~@/assets/logo.png" alt="electron-vue">
-    <main>
-      <div class="left-side">
-        <span class="title">
-          Welcome to your new project!
-        </span>
-      </div>
-
-      <div class="right-side">
-        <div class="doc">
-          <div class="title">Getting Started</div>
-          <p>
-            electron-vue comes packed with detailed documentation that covers everything from
-            internal configurations, using the project structure, building your application,
-            and so much more.
-          </p>
-          <button @click="open('https://simulatedgreg.gitbooks.io/electron-vue/content/')">Read the Docs</button><br><br>
+    <section class="app-grid">
+      <header>Shopping List Maker</header>
+      <main>
+        <div v-for="recipe in recipes" :key="recipe.name">
+          <recipe-card :recipe="recipe"/>
         </div>
-        <div class="doc">
-          <div class="title alt">Other Documentation</div>
-          <button class="alt" @click="open('https://electron.atom.io/docs/')">Electron</button>
-          <button class="alt" @click="open('https://vuejs.org/v2/guide/')">Vue.js</button>
-        </div>
-        <div class="doc">
-          <div class="title alt">Test Recipe</div>
-          <table>
+      </main>
+      <aside>
+        <table>
             <tr>
               <th>Ingredient</th>              
               <th>Amount</th>              
               <th>Measurement</th>              
             </tr>
-            <tr v-for="measuredIngredient in testRecipe.measuredIngredients" :key="measuredIngredient.ingredient.name">
-              <td>{{measuredIngredient.ingredient.name}}</td>
-              <td>{{measuredIngredient.amount}}</td>
-              <td>{{measuredIngredient.measurement.toString()}}</td>
+            <tr v-for="measuredIngredient in recipes[0].measuredIngredients" :key="measuredIngredient.ingredient.name">
+              <td class="ingredient-name">{{measuredIngredient.ingredient.name}}</td>
+              <td class="ingredient-amount">{{measuredIngredient.amount}}</td>
+              <td class="ingredient-measurement">{{measuredIngredient.measurement.toString()}}</td>
             </tr>
           </table>
-        </div>
-      </div>
-    </main>
+      </aside>
+      <footer>copyright qwoodmansee</footer>
+    </section>
   </div>
 </template>
 
 <script>
   import SharedLogic from './LandingPage.js'
-
+  import RecipeCard from '../RecipeCard/RecipeCard.electron'
   export default {
     name: SharedLogic.name,
-    components: SharedLogic.components,
+    components: {
+      ...SharedLogic.components,
+      RecipeCard
+    },
     // example of how to combine shared logic methods with platform specific methods
     methods: {
       ...SharedLogic.methods,
@@ -67,85 +53,45 @@
 </script>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:    "header header header"
+                            "main main sidebar"
+                            "footer footer footer";
   }
 
-  body { font-family: 'Source Sans Pro', sans-serif; }
-
-  #wrapper {
-    background:
-      radial-gradient(
-        ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(229, 229, 229, .9) 100%
-      );
-    height: 100vh;
-    padding: 60px 80px;
-    width: 100vw;
-  }
-
-  #logo {
-    height: auto;
-    margin-bottom: 20px;
-    width: 420px;
-  }
-
-  main {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  main > div { flex-basis: 50%; }
-
-  .left-side {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .welcome {
-    color: #555;
-    font-size: 23px;
-    margin-bottom: 10px;
-  }
-
-  .title {
-    color: #2c3e50;
+  .app-grid aside, main, footer, header {
+    color: white;
     font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 6px;
+    padding: 20px;
   }
 
-  .title.alt {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .app-grid > header {
+    /* background: #b03532; */
+    grid-area: header;
   }
 
-  .doc p {
-    color: black;
-    margin-bottom: 10px;
+  .app-grid > main {
+    /* background: #33a8a5; */
+    grid-area: main;
+    display: grid;   
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
   }
 
-  .doc button {
-    font-size: .8em;
-    cursor: pointer;
-    outline: none;
-    padding: 0.75em 2em;
-    border-radius: 2em;
-    display: inline-block;
-    color: #fff;
-    background-color: #4fc08d;
-    transition: all 0.15s ease;
-    box-sizing: border-box;
-    border: 1px solid #4fc08d;
+  .app-grid > aside {
+    /* background: #30997a; */
+    grid-area: sidebar;
+  }
+  .app-grid > footer {
+    /* background: #6a478f; */
+    grid-area: footer;
   }
 
-  .doc button.alt {
-    color: #42b983;
-    background-color: transparent;
+  .ingredient-amount {
+    text-align: right;
   }
+
 </style>
