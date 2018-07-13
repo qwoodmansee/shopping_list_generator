@@ -42,7 +42,7 @@ class Pound extends Measurement {
     return amount * 453.59237
   }
   fromMetric (amount) {
-    return 453.59237 / amount
+    return amount / 453.59237
   }
   toString () {
     return 'lb'
@@ -54,7 +54,7 @@ class Ounce extends Measurement {
     return amount * 28.3495
   }
   fromMetric (amount) {
-    return 28.3495 / amount
+    return amount / 28.3495
   }
   toString () {
     return 'oz.'
@@ -66,7 +66,7 @@ class Tablespoon extends Measurement {
     return amount * 0.0147868 // liters
   }
   fromMetric (amount) {
-    return 0.0147868 / amount
+    return amount / 0.0147868
   }
   toString () {
     return 'Tbsp.'
@@ -78,7 +78,7 @@ class Cup extends Measurement {
     return amount * 0.236588 // liters
   }
   fromMetric (amount) {
-    return 0.236588 / amount
+    return amount / 0.236588
   }
   toString () {
     return 'Cup'
@@ -90,7 +90,7 @@ class Teaspoon extends Measurement {
     return amount * 0.00492892 // liters
   }
   fromMetric (amount) {
-    return 0.00492892 / amount
+    return amount / 0.00492892
   }
   toString () {
     return 'tsp.'
@@ -126,7 +126,7 @@ class Pint extends Measurement {
     return amount * 0.473176
   }
   fromMetric (amount) {
-    return 0.473176 / amount
+    return amount / 0.473176
   }
   toString () {
     return 'pint'
