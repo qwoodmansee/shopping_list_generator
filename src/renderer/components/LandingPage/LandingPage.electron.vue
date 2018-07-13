@@ -16,7 +16,7 @@
             </tr>
             <tr v-for="measuredIngredient in shoppingList.measuredIngredients" :key="measuredIngredient.ingredient.name">
               <td class="ingredient-name">{{measuredIngredient.ingredient.name}}</td>
-              <td class="ingredient-amount">{{measuredIngredient.amount}}</td>
+              <td class="ingredient-amount">{{+measuredIngredient.amount.toFixed(2)}}</td>
               <td class="ingredient-measurement">{{measuredIngredient.measurement.toString()}}</td>
             </tr>
           </table>
