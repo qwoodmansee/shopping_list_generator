@@ -1,4 +1,5 @@
 
+import {MeasuredIngredient} from './ingredient'
 /**
  * A shopping list is really just a list of measured ingredients; however we make it a class to give
  * it some nice methods, like being able to add entire recipes to it.
@@ -18,10 +19,10 @@ export class ShoppingList {
   addMeasuredIngredient (measuredIngredient) {
     // check if the ingredient is already in the list
     let existingIngredientIndex = this.measuredIngredients.findIndex(x => x.ingredient.name === measuredIngredient.ingredient.name)
-    if (existingIngredientIndex === undefined) {
+    if (existingIngredientIndex === undefined || existingIngredientIndex === -1) {
       this.measuredIngredients.push(measuredIngredient)
     } else {
-      this.measuredIngredients[existingIngredientIndex].add(measuredIngredient)
+      this.measuredIngredients.splice(existingIngredientIndex, 1, MeasuredIngredient.add(this.measuredIngredients[existingIngredientIndex], measuredIngredient))
     }
   }
 
